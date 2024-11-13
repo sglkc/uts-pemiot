@@ -26,6 +26,10 @@ key = max(data['idx'] for data in database)
 def index_html():
     return send_file('index.html')
 
+@app.get('/pico.min.css')
+def pico_css():
+    return send_file('pico.min.css')
+
 @app.post('/api/post')
 def post_data():
     global key

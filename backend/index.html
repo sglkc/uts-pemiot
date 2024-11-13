@@ -3,33 +3,85 @@
   <head>
     <title>UTS IOT 152022099</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="pico.min.css" />
   </head>
   <body>
-    <form action="/api/post" method="post">
-      <label for="suhu">Suhu:</label>
-      <input id="suhu" type="range" name="suhu" min="0" max="100" />
-      <label for="kelembaban">Kelembaban:</label>
-      <input id="kelembaban" type="range" name="kelembaban" />
-      <label for="kecerahan">Kecerahan:</label>
-      <input id="kecerahan" type="range" name="kecerahan" min="0" max="100" />
-      <button type="submit">KIRIM!</button>
-    </form>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>IDX</th>
-          <th>Suhu</th>
-          <th>Kelembaban</th>
-          <th>Kecerahan</th>
-          <th>Timestamp</th>
-        </tr>
-      </thead>
-      <tbody id="table-content">
-      </tbody>
-    </table>
-    <button id="get-data" type="button">GET DATA</button>
+    <main class="container">
+      <h1>UTS Pemrograman IOT</h1>
+      <form id="form" action="/api/post" method="post">
+        <div class="grid">
+          <label for="suhu">Suhu:</label>
+          <input id="suhu" type="range" name="suhu" min="0" max="100" />
+
+          <label for="kelembaban">Kelembaban:</label>
+          <input id="kelembaban" type="range" name="kelembaban" min="0" max="100" />
+
+          <label for="kecerahan">Kecerahan:</label>
+          <input id="kecerahan" type="range" name="kecerahan" min="0" max="100" />
+        </div>
+        <button type="submit" class="primary">KIRIM!</button>
+      </form>
+
+      <button id="get-data" class="secondary" type="button">GET DATA</button>
+
+      <h2>Data Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>IDX</th>
+            <th>Suhu</th>
+            <th>Kelembaban</th>
+            <th>Kecerahan</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody id="table-content">
+        </tbody>
+      </table>
+
+      <h2>Summary Statistics for Suhu</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Suhu Min</th>
+            <th>Suhu Max</th>
+            <th>Suhu Rata-rata</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="suhu-min">-</td>
+            <td id="suhu-max">-</td>
+            <td id="suhu-avg">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
     <script>
     const table = document.querySelector('#table-content')
+    const suhuminrow = document.querySelector('#suhu-min')
+    const suhumaxrow = document.querySelector('#suhu-max')
+    const suhuavgrow = document.querySelector('#suhu-avg')
+
+    document.querySelector('#form').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const suhu = e.target.suhu.value
+      const kelembaban = e.target.kelembaban.value
+      const kecerahan = e.target.kecerahan.value
+
+      const body = JSON.stringify({ suhu, kelembaban, kecerahan })
+
+      fetch('/api/post', {
+        method: 'post',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body
+      })
+        .then(() => alert('sukses'))
+        .catch(() => alert('error'))
+    })
 
     document.querySelector('#get-data').addEventListener('click', () => {
       fetch('/api/get')
@@ -38,6 +90,11 @@
           const database = json['nilai_suhu_max_humid_max']
 
           if (!database) return alert('data tidak terbaca!')
+
+          table.innerHTML = ''
+          suhuminrow.textContent = json['suhumin']
+          suhumaxrow.textContent = json['suhumax']
+          suhuavgrow.textContent = json['suhurata']
 
           for (const data of database) {
             const row = document.createElement('tr')
