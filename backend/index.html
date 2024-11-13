@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UTS IOT 152022099</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <form action="/api/post" method="post">
+      <label for="suhu">Suhu:</label>
+      <input id="suhu" type="range" name="suhu" min="0" max="100" />
+      <label for="kelembaban">Kelembaban:</label>
+      <input id="kelembaban" type="range" name="kelembaban" />
+      <label for="kecerahan">Kecerahan:</label>
+      <input id="kecerahan" type="range" name="kecerahan" min="0" max="100" />
+      <button type="submit">KIRIM!</button>
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>IDX</th>
+          <th>Suhu</th>
+          <th>Kelembaban</th>
+          <th>Kecerahan</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody id="table-content">
+      </tbody>
+    </table>
+    <button id="get-data" type="button">GET DATA</button>
+    <script>
+    const table = document.querySelector('#table-content')
+
+    document.querySelector('#get-data').addEventListener('click', () => {
+      fetch('/api/get')
+        .then((res) => res.json())
+        .then((json) => {
+          const database = json['nilai_suhu_max_humid_max']
+
+          if (!database) return alert('data tidak terbaca!')
+
+          for (const data of database) {
+            const row = document.createElement('tr')
+            const idxCol = document.createElement('td')
+            const tempCol = document.createElement('td')
+            const humdCol = document.createElement('td')
+            const lighCol = document.createElement('td')
+            const timeCol = document.createElement('td')
+
+            idxCol.textContent = data['idx']
+            tempCol.textContent = data['suhu']
+            humdCol.textContent = data['humid']
+            lighCol.textContent = data['kecerahan']
+            timeCol.textContent = data['timestamp']
+
+            row.append(idxCol, tempCol, humdCol, lighCol, timeCol)
+            table.append(row)
+          }
+        })
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" version="24.8.4">
+  <diagram name="Page-1" id="JK87prBqbX9cVuqI8p-D">
+    <mxGraphModel dx="1050" dy="577" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yy2-BuCBUI8-lA2ZAzeM-2" target="yy2-BuCBUI8-lA2ZAzeM-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yy2-BuCBUI8-lA2ZAzeM-2" target="yy2-BuCBUI8-lA2ZAzeM-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="547" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="yy2-BuCBUI8-lA2ZAzeM-2" target="yy2-BuCBUI8-lA2ZAzeM-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-2" value="ESP32" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://raharja.ac.id/wp-content/uploads/2021/11/ESP32-Module.png;" vertex="1" parent="1">
+          <mxGeometry x="500" y="315" width="112.28" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yy2-BuCBUI8-lA2ZAzeM-3" target="yy2-BuCBUI8-lA2ZAzeM-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-3" value="DHT22" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://id.szks-kuongshun.com/uploads/201810680/dht22-digital-temperature-humidity-sensor-module56055530906.jpg;" vertex="1" parent="1">
+          <mxGeometry x="710" y="150" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-7" value="Buzzer" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://sariteknologi.com/wp-content/uploads/2021/07/Buzzer.jpg;" vertex="1" parent="1">
+          <mxGeometry x="710" y="312.5" width="85.5" height="85.5" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-9" value="LED" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.iklanvideotron.com/wp-content/uploads/2017/01/w.jpg;" vertex="1" parent="1">
+          <mxGeometry x="710" y="480" width="84.2" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yy2-BuCBUI8-lA2ZAzeM-12" target="yy2-BuCBUI8-lA2ZAzeM-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="yy2-BuCBUI8-lA2ZAzeM-12" target="yy2-BuCBUI8-lA2ZAzeM-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-12" value="Server" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Server_Desktop.svg;" vertex="1" parent="1">
+          <mxGeometry x="320" y="308.65999999999997" width="73.11" height="92.68" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=block;startFill=1;" edge="1" parent="1" source="yy2-BuCBUI8-lA2ZAzeM-14" target="yy2-BuCBUI8-lA2ZAzeM-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-14" value="Database" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.database;" vertex="1" parent="1">
+          <mxGeometry x="160" y="321.77" width="56.5" height="66.47" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-16" value="Mobile App" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.pda;" vertex="1" parent="1">
+          <mxGeometry x="342" y="499" width="30" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="yy2-BuCBUI8-lA2ZAzeM-18" value="Web" style="verticalLabelPosition=bottom;sketch=0;aspect=fixed;html=1;verticalAlign=top;strokeColor=none;align=center;outlineConnect=0;shape=mxgraph.citrix.globe;" vertex="1" parent="1">
+          <mxGeometry x="322.31" y="162.28" width="68.5" height="65.45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
